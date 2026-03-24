@@ -11,37 +11,30 @@ A typical ECG signal consists of repeating waveforms corresponding to each cardi
 
 * P wave: Represents atrial depolarization, indicating the electrical activation of the atria.
 * QRS complex: Corresponds to ventricular depolarization and is the most prominent feature of the ECG signal. It includes:
-* * Q wave: Initial negative deflection
-* * R wave: Positive peak
-* * S wave: Subsequent negative deflection
+   * Q wave: Initial negative deflection
+   * R wave: Positive peak
+   * S wave: Subsequent negative deflection
 * T wave: Represents ventricular repolarization, indicating recovery of the ventricles after contraction
 ![image](https://github.com/user-attachments/assets/98f3401c-eeda-471e-91a2-038f7e504d5b)
 ## ECG Signal Processing
 ECG signals are often contaminated by different types of noise, including:
-
-Baseline wander: Low-frequency noise caused by respiration or body movement
-Powerline interference: 50/60 Hz noise from electrical systems
-Muscle artifacts (EMG noise): High-frequency noise due to muscle activity
-Electrode motion artifacts: Caused by poor electrode contact
+* Baseline wander: Low-frequency noise caused by respiration or body movement
+* Powerline interference: 50/60 Hz noise from electrical systems
+* Muscle artifacts (EMG noise): High-frequency noise due to muscle activity
+* Electrode motion artifacts: Caused by poor electrode contact
 
 These distortions can significantly affect the accuracy of downstream analysis.
 ### Preprocessing Techniques
 1. Baseline Wander Removal
-
 Baseline drift is typically removed using:
-
-High-pass filters (cutoff ≈ 0.5 Hz)
-Polynomial fitting or moving average methods
+* High-pass filters (cutoff ≈ 0.5 Hz)
+* Polynomial fitting or moving average methods
 2. Noise Filtering
-
 To improve signal quality:
-
-Low-pass filters (cutoff ≈ 40–100 Hz) remove high-frequency noise
-Notch filters (at 50/60 Hz) suppress powerline interference
+* Low-pass filters (cutoff ≈ 40–100 Hz) remove high-frequency noise
+* Notch filters (at 50/60 Hz) suppress powerline interference
 3. Signal Normalization
-
 Normalization ensures consistent amplitude scaling across recordings, which is important for machine learning models.
-
 ## Modeling 
 From the overview of existing ECG heartbeat classification methods, it can be observed that each approach has its own advantages and limitations. Recurrent models such as RNN, LSTM, and GRU are effective in capturing temporal dependencies in ECG signals; however, they suffer from high computational cost, limited parallelization capability, and are not well-suited for deployment on resource-constrained devices. On the other hand, Transformer-based models achieve excellent performance but require substantial memory and longer inference time, making them less efficient for small to medium-sized datasets such as MIT-BIH.
 
@@ -50,9 +43,9 @@ Based on the project requirements—namely computational efficiency, fast infere
 CNN 1D is highly effective at extracting local features from ECG signals, such as R-peaks, QRS complexes, and ST-segment variations. In addition, CNN-based models offer faster training speed and significantly fewer parameters compared to LSTM or Transformer architectures.
 A Lightweight Attention mechanism is incorporated to enable the model to focus on the most informative segments of the signal, thereby improving its ability to distinguish between different types of heartbeats. This mechanism allows the model to capture global contextual information without introducing significant computational overhead.
 The combination of CNN 1D and Lightweight Attention achieves a balance between performance and model complexity:
-Lightweight and efficient: suitable for real-time applications and deployment on IoT or edge devices
-Improved accuracy: by emphasizing abnormal or discriminative regions within the cardiac cycle
-Robustness: capable of handling noisy signals and variations in heart rhythm
+* Lightweight and efficient: suitable for real-time applications and deployment on IoT or edge devices
+* Improved accuracy: by emphasizing abnormal or discriminative regions within the cardiac cycle
+* Robustness: capable of handling noisy signals and variations in heart rhythm
 
 Therefore, the proposed model ensures both computational efficiency and high classification accuracy for ECG heartbeat classification, aligning well with the objectives and constraints of the project.
 ### Convolutional Neural Network 1D (CNN 1D)
@@ -65,7 +58,6 @@ The core component of CNN 1D is the convolution operation, which applies a set o
 <img width="725" height="626" alt="image" src="https://github.com/user-attachments/assets/d1de4303-d543-4827-8950-d3769b101b28" />
 
 1. Key Components of CNN 1D
-2. 
 1.1 Convolutional Layer
    
 Extracts local features from the input signal
