@@ -60,24 +60,29 @@ The core component of CNN 1D is the convolution operation, which applies a set o
 
 <img width="367" height="124" alt="image" src="https://github.com/user-attachments/assets/6b8e1975-b081-4109-8339-19aeea8a8c63" />
 <img width="725" height="626" alt="image" src="https://github.com/user-attachments/assets/d1de4303-d543-4827-8950-d3769b101b28" />
+
 1. Key Components of CNN 1D
 1.1 Convolutional Layer
+   
 Extracts local features from the input signal
 Captures patterns such as QRS complexes, R-peaks, and waveform transitions
 1.2 Activation Function
+
 Commonly uses ReLU (Rectified Linear Unit)
 Introduces non-linearity:
 𝑓(𝑥)=max⁡(0,𝑥)
+
 1.3 Pooling Layer
 Reduces dimensionality and computational cost
 Common types:
 Max pooling
 Average pooling
 Helps retain the most important features while reducing noise sensitivity
+
 1.4 Fully Connected Layer
 Maps extracted features to output classes
 Used for classification tasks (e.g., heartbeat types)
-2. Advantages of CNN 1D for ECG Signals
+3. Advantages of CNN 1D for ECG Signals
 
 CNN 1D offers several advantages when applied to ECG signal classification:
 
@@ -154,11 +159,11 @@ Consequently, the combination of Conv1D and SE attention achieves high classific
 └─────────────────────────────────────────────────────────┘
 ```
 
-## 🚀 Demo
+## Demo
 https://drive.google.com/drive/folders/1LgMZBo7TKpf__LVrDuDrsNUa-TZPPx6a?usp=sharing
 
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Health_Monitor_System/
