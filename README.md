@@ -62,10 +62,12 @@ The core component of CNN 1D is the convolution operation, which applies a set o
 <img width="725" height="626" alt="image" src="https://github.com/user-attachments/assets/d1de4303-d543-4827-8950-d3769b101b28" />
 
 1. Key Components of CNN 1D
+2. 
 1.1 Convolutional Layer
    
 Extracts local features from the input signal
 Captures patterns such as QRS complexes, R-peaks, and waveform transitions
+
 1.2 Activation Function
 
 Commonly uses ReLU (Rectified Linear Unit)
@@ -82,10 +84,9 @@ Helps retain the most important features while reducing noise sensitivity
 1.4 Fully Connected Layer
 Maps extracted features to output classes
 Used for classification tasks (e.g., heartbeat types)
+
 3. Advantages of CNN 1D for ECG Signals
-
 CNN 1D offers several advantages when applied to ECG signal classification:
-
 Automatic feature extraction: Eliminates the need for handcrafted features
 Efficient computation: Fewer parameters compared to recurrent models
 Parallel processing: Faster training compared to RNN/LSTM
