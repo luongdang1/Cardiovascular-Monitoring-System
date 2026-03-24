@@ -1,4 +1,4 @@
-﻿# Edge AI Cardiovascular Monitoring System with chatbot assitant 
+﻿# Edge AI Cardiovascular Monitoring System with AI assitant 
 This project presents an Edge AI-based cardiovascular monitoring system designed to continuously track heart activity in real time using embedded devices. The system leverages lightweight machine learning models deployed on edge hardware (Raspberry Pi) to process physiological signals locally, enabling low-latency, privacy-preserving, and energy-efficient health monitoring.
 
 The primary goal is to detect potential cardiovascular abnormalities early by analyzing biosignals such as ECG, without relying heavily on cloud infrastructure. This makes the system suitable for:
