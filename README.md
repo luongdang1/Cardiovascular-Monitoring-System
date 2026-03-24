@@ -57,35 +57,35 @@ The core component of CNN 1D is the convolution operation, which applies a set o
 <img width="367" height="124" alt="image" src="https://github.com/user-attachments/assets/6b8e1975-b081-4109-8339-19aeea8a8c63" />
 <img width="725" height="626" alt="image" src="https://github.com/user-attachments/assets/d1de4303-d543-4827-8950-d3769b101b28" />
 
-1. Key Components of CNN 1D
-1.1 Convolutional Layer
-   
-Extracts local features from the input signal
-Captures patterns such as QRS complexes, R-peaks, and waveform transitions
+## 1. Key Components of CNN 1D
 
-1.2 Activation Function
+### 1.1 Convolutional Layer
+Extracts local features from the input signal  
+Captures patterns such as QRS complexes, R-peaks, and waveform transitions  
 
-Commonly uses ReLU (Rectified Linear Unit)
-Introduces non-linearity:
-𝑓(𝑥)=max⁡(0,𝑥)
+### 1.2 Activation Function
+Commonly uses ReLU (Rectified Linear Unit)  
+Introduces non-linearity:  
+f(x) = max(0, x)
 
-1.3 Pooling Layer
-Reduces dimensionality and computational cost
+### 1.3 Pooling Layer
+Reduces dimensionality and computational cost  
+
 Common types:
-Max pooling
-Average pooling
-Helps retain the most important features while reducing noise sensitivity
+- Max pooling  
+- Average pooling  
 
-1.4 Fully Connected Layer
-Maps extracted features to output classes
+Helps retain the most important features while reducing noise sensitivity  
+
+### 1.4 Fully Connected Layer
+Maps extracted features to output classes  
 Used for classification tasks (e.g., heartbeat types)
-
 3. Advantages of CNN 1D for ECG Signals
 CNN 1D offers several advantages when applied to ECG signal classification:
-Automatic feature extraction: Eliminates the need for handcrafted features
-Efficient computation: Fewer parameters compared to recurrent models
-Parallel processing: Faster training compared to RNN/LSTM
-Local pattern detection: Effectively captures important ECG characteristics such as QRS complexes and arrhythmia patterns
+* Automatic feature extraction: Eliminates the need for handcrafted features
+* Efficient computation: Fewer parameters compared to recurrent models
+* Parallel processing: Faster training compared to RNN/LSTM
+* Local pattern detection: Effectively captures important ECG characteristics such as QRS complexes and arrhythmia patterns
 ### Lightweight Attention
 Among various lightweight attention techniques, the Squeeze-and-Excitation (SE) mechanism is selected due to its suitability for the characteristics of ECG signals and the requirement for deployment in resource-constrained environments.
 
@@ -95,8 +95,8 @@ Therefore, reweighting the importance of feature channels is significantly more 
 
 The SE mechanism achieves this through two main operations:
 
-Squeeze: Aggregates global temporal information by compressing each feature map into a single value using global average pooling, resulting in a channel-wise descriptor.
-Excitation: Learns channel-wise weights through a small neural network to selectively emphasize or suppress each feature channel.
+* Squeeze: Aggregates global temporal information by compressing each feature map into a single value using global average pooling, resulting in a channel-wise descriptor.
+* Excitation: Learns channel-wise weights through a small neural network to selectively emphasize or suppress each feature channel.
 
 As a result, the SE block adaptively recalibrates channel importance with a computational complexity of onlyO(C), which is significantly lower than that of standard self-attention mechanisms.
 
