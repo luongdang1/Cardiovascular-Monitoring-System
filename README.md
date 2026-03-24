@@ -57,7 +57,8 @@ A One-Dimensional Convolutional Neural Network (CNN 1D) is a deep learning archi
 
 In the context of ECG analysis, CNN 1D is widely used due to its ability to automatically learn discriminative features directly from raw signals without requiring manual feature engineering.
 The core component of CNN 1D is the convolution operation, which applies a set of learnable filters (kernels) to the input signal.
-<img width="389" height="116" alt="image" src="https://github.com/user-attachments/assets/6c815c43-303b-4bd3-99fb-856f9c9b4e95" />
+
+<img width="367" height="124" alt="image" src="https://github.com/user-attachments/assets/6b8e1975-b081-4109-8339-19aeea8a8c63" />
 <img width="725" height="626" alt="image" src="https://github.com/user-attachments/assets/d1de4303-d543-4827-8950-d3769b101b28" />
 1. Key Components of CNN 1D
 1.1 Convolutional Layer
