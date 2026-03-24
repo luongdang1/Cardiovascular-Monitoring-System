@@ -11,9 +11,9 @@ A typical ECG signal consists of repeating waveforms corresponding to each cardi
 
 * P wave: Represents atrial depolarization, indicating the electrical activation of the atria.
 * QRS complex: Corresponds to ventricular depolarization and is the most prominent feature of the ECG signal. It includes:
-** Q wave: Initial negative deflection
-** R wave: Positive peak
-** S wave: Subsequent negative deflection
+* * Q wave: Initial negative deflection
+* * R wave: Positive peak
+* * S wave: Subsequent negative deflection
 * T wave: Represents ventricular repolarization, indicating recovery of the ventricles after contraction
 ![image](https://github.com/user-attachments/assets/98f3401c-eeda-471e-91a2-038f7e504d5b)
 ## ECG Signal Processing
