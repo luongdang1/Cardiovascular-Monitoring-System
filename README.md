@@ -106,54 +106,6 @@ As a result, the SE block adaptively recalibrates channel importance with a comp
 Despite its simplicity, the SE mechanism effectively enhances the representation of critical ECG features such as amplitude, slope, and QRS complex width. This improvement enables the model to better distinguish between challenging heartbeat classes.
 
 Consequently, the combination of Conv1D and SE attention achieves high classification accuracy on the MIT-BIH dataset, reduces overfitting, and remains well-suited for real-world deployment on edge devices or real-time heart monitoring systems.
-## Architecture
-
-```text
-┌─────────────────────────────────────────────────────────┐
-│                   User Interface                        │
-│             (Next.js 14 + TailwindCSS)                  │
-│   • Live ECG Graph   • Health Alerts   • Chatbot UI     │
-└─────────────────▲─────────┬─────────────────────────────┘
-                  │         │ HTTPS/REST & WebSocket
-┌─────────────────▼─────────▼─────────────────────────────┐
-│              Backend System (Express + Python)          │
-│                                                         │
-│  ┌────────────────────────┐   ┌──────────────────────┐  │
-│  │  Secure Chatbot Engine │   │  ECG Analysis Engine │  │
-│  │ • Qwen Router          │   │ • Signal Pre-process │  │
-│  │ • PII Sanitization     │   │   (Noise Filtering)  │  │
-│  │ • Gemini Integration   │   │ • Anomaly Detection  │  │
-│  │ • Safety Gate          │   │   (AI/Arrhythmia)    │  │◄──┐
-│  └───────────┬────────────┘   └──────────┬───────────┘  │   │
-│              │                           │              │   │
-└──────────────┼───────────────────────────┼──────────────┘   │
-               │                           │                  │
-      ┌────────▼─────────┐        ┌────────▼─────────┐        │
-      │    PostgreSQL    │        │    Gemini API    │        │
-      │  (Patient Data   │        │   (Advisory &    │        │
-      │   & ECG Logs)    │        │    Report Gen)   │        │
-      └──────────────────┘        └──────────────────┘        │
-               │                                              │
-      ┌────────▼─────────┐                                    │
-      │  Qwen 14B Local  │                                    │
-      │ (Classification) │                                    │
-      └──────────────────┘                                    │
-                                                              │
-┌─────────────────────────────────────────────────────────┐   │
-│                   IoT Hardware Layer                    │   │
-│                                                         │   │
-│  ┌──────────────┐      ┌──────────────┐                 │   │
-│  │  Patient     │      │     MCU      │   MQTT / HTTP   │   │
-│  │ (Bio-Signal) ├───►  │ (ESP32/RPi)  ├─────────────────┼───┘
-│  └──────────────┘      │ + FW Logic   │                 │
-│         │              └──────┬───────┘                 │
-│         ▼                     │                         │
-│  ┌──────────────┐             │                         │
-│  │  ECG Sensor  │◄────────────┘                         │
-│  │ (AD8232/PPG) │                                       │
-│  └──────────────┘                                       │
-└─────────────────────────────────────────────────────────┘
-```
 
 ## Demo
 https://drive.google.com/drive/folders/1LgMZBo7TKpf__LVrDuDrsNUa-TZPPx6a?usp=sharing
